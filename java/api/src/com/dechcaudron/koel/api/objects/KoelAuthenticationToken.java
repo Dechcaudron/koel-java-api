@@ -1,4 +1,4 @@
-package objects;
+package com.dechcaudron.koel.api.objects;
 
 import java.util.GregorianCalendar;
 

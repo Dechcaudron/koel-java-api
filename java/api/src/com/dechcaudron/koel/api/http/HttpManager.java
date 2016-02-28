@@ -1,6 +1,6 @@
-package http;
+package com.dechcaudron.koel.api.http;
 
-import exceptions.HttpException;
+import com.dechcaudron.koel.api.exceptions.HttpException;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;

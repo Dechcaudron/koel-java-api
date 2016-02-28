@@ -1,4 +1,4 @@
-package exceptions;
+package com.dechcaudron.koel.api.exceptions;
 
 public class KoelApiException extends Exception
 {

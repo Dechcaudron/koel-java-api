@@ -1,10 +1,10 @@
-package utils;
+package com.dechcaudron.koel.api.utils;
 
-import exceptions.HttpException;
-import exceptions.KoelApiException;
-import exceptions.KoelAuthenticationException;
-import http.HttpManager;
-import objects.KoelAuthenticationToken;
+import com.dechcaudron.koel.api.exceptions.HttpException;
+import com.dechcaudron.koel.api.exceptions.KoelApiException;
+import com.dechcaudron.koel.api.exceptions.KoelAuthenticationException;
+import com.dechcaudron.koel.api.http.HttpManager;
+import com.dechcaudron.koel.api.objects.KoelAuthenticationToken;
 import org.json.JSONException;
 import org.json.JSONObject;
 
