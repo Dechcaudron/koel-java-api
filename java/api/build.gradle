@@ -1,4 +1,4 @@
-group 'com.dechcaudron.koelApi'
+group 'com.dechcaudron'
 version '0.1.1-SNAPSHOT'
 
 apply plugin: 'java'
