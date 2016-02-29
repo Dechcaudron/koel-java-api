@@ -12,8 +12,6 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.HashMap;
 
 public abstract class AuthenticationUtils
@@ -24,7 +22,7 @@ public abstract class AuthenticationUtils
         URI endpoint;
         try
         {
-            endpoint = new URI(koelServerUrl.getPath() + "/api/me");
+            endpoint = new URI(koelServerUrl.toString() + "/api/me");
 
         } catch (URISyntaxException e)
         {

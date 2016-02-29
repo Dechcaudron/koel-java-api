@@ -18,4 +18,9 @@ public class KoelAuthenticationToken
     {
         return new GregorianCalendar();
     }
+
+    public String getEncodedToken()
+    {
+        return encodedToken;
+    }
 }
