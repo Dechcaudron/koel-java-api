@@ -43,10 +43,7 @@ public abstract class AuthenticationUtils
             koelResponse = HttpManager.executePOST(endpoint, null, emailAndPass);
             JSONObject jsonResponse = new JSONObject(koelResponse);
 
-            GregorianCalendar expirationDate = new GregorianCalendar();
-            expirationDate.roll(Calendar.DATE, 7);
-
-            return new KoelAuthenticationToken(jsonResponse.getString("token"), expirationDate);
+            return new KoelAuthenticationToken(jsonResponse.getString("token"));
 
         } catch (JSONException e)
         {

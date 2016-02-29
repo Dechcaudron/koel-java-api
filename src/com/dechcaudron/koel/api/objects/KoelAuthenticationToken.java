@@ -1,20 +1,21 @@
 package com.dechcaudron.koel.api.objects;
 
+import com.dechcaudron.koel.api.exceptions.KoelApiException;
+
 import java.util.GregorianCalendar;
 
 public class KoelAuthenticationToken
 {
+    //TODO: get expiration date, validate encoded tokens
     private final String encodedToken;
-    private final GregorianCalendar expirationDate;
 
-    public KoelAuthenticationToken(String encodedToken, GregorianCalendar expirationDate)
+    public KoelAuthenticationToken(String encodedToken) throws KoelApiException
     {
         this.encodedToken = encodedToken;
-        this.expirationDate = expirationDate;
     }
 
     public GregorianCalendar getExpirationDate()
     {
-        return expirationDate;
+        return new GregorianCalendar();
     }
 }
