@@ -50,7 +50,7 @@ public abstract class AuthenticationUtils
         } catch (HttpException e)
         {
             if (e.getResponseCode() == 401)
-                throw new KoelAuthenticationException("The given credentials (email = " + email + ", password = " + password + " were not accepted by the Koel instance");
+                throw new KoelAuthenticationException("The given credentials (email = " + email + ", password = " + password + ") were not accepted by the Koel instance");
             else
                 throw new KoelApiException("The Koel instance answered with HTTP code " + e.getResponseCode());
         }

@@ -70,7 +70,7 @@ public abstract class HttpManager
             headers.add(new BasicHeader(entry.getKey(), entry.getValue()));
         }
 
-        requestBase.setHeaders((Header[]) headers.toArray());
+        requestBase.setHeaders(headers.toArray(new Header[headers.size()]));
     }
 
     private static void setFormParams(HttpEntityEnclosingRequestBase requestBase, HashMap<String, String> paramsMap)
@@ -87,7 +87,7 @@ public abstract class HttpManager
             requestBase.setEntity(new UrlEncodedFormEntity(nameValuePairs));
         } catch (UnsupportedEncodingException e)
         {
-            //think of something
+            //TODO: think of something
         }
     }
 
