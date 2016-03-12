@@ -71,13 +71,14 @@ public abstract class MediaUtils
             JSONObject artistJson = artistsArray.getJSONObject(i);
             JSONArray albumsJson = artistJson.getJSONArray("albums");
 
-            artists.add(new Artist(artistJson.getString("name"), parseAlbumsJSON(albumsJson)));
+            String artistName = artistJson.getString("name");
+            artists.add(new Artist(artistJson.getString("name"), parseAlbumsJSON(artistName, albumsJson)));
         }
 
         return artists;
     }
 
-    private static List<Album> parseAlbumsJSON(JSONArray albumsArray)
+    private static List<Album> parseAlbumsJSON(String artistName, JSONArray albumsArray)
     {
         List<Album> albums = new ArrayList<>();
 
@@ -86,13 +87,14 @@ public abstract class MediaUtils
             JSONObject albumJson = albumsArray.getJSONObject(i);
             JSONArray songsArray = albumJson.getJSONArray("songs");
 
-            albums.add(new Album(albumJson.getString("name"), parseSongsJSON(songsArray)));
+            String albumName = albumJson.getString("name");
+            albums.add(new Album(artistName, albumName, parseSongsJSON(artistName, albumName, songsArray)));
         }
 
         return albums;
     }
 
-    private static List<Song> parseSongsJSON(JSONArray songsArray)
+    private static List<Song> parseSongsJSON(String artistName, String albumName, JSONArray songsArray)
     {
         List<Song> songs = new ArrayList<>();
 
@@ -100,7 +102,7 @@ public abstract class MediaUtils
         {
             JSONObject songJson = songsArray.getJSONObject(i);
 
-            songs.add(new Song(songJson.getString("title"), songJson.getString("id")));
+            songs.add(new Song(artistName, albumName, songJson.getString("title"), songJson.getString("id")));
         }
 
         return songs;
