@@ -10,7 +10,7 @@ public abstract class StreamingUtils
 {
     public static URL getStreamingURL(URL serverURL, KoelAuthenticationToken authenticationToken, String songId) throws KoelApiException
     {
-        String stringURL = serverURL.toString() + "/api/" + songId + "/play?token=" + authenticationToken.getEncodedToken();
+        String stringURL = serverURL.toString() + "/api/" + songId + "/play?jwt-token=" + authenticationToken.getEncodedToken();
         try
         {
             return new URL(stringURL);
