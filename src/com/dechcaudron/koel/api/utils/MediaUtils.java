@@ -72,7 +72,7 @@ public abstract class MediaUtils
             JSONArray albumsJson = artistJson.getJSONArray("albums");
 
             String artistName = artistJson.getString("name");
-            artists.add(new Artist(artistJson.getString("name"), parseAlbumsJSON(artistName, albumsJson)));
+            artists.add(new Artist(artistJson.getString("name"), parseAlbumsJSON(artistName, albumsJson), artistJson.getString("image")));
         }
 
         return artists;
@@ -88,7 +88,7 @@ public abstract class MediaUtils
             JSONArray songsArray = albumJson.getJSONArray("songs");
 
             String albumName = albumJson.getString("name");
-            albums.add(new Album(artistName, albumName, parseSongsJSON(artistName, albumName, songsArray)));
+            albums.add(new Album(artistName, albumName, parseSongsJSON(artistName, albumName, songsArray), albumJson.getString("cover")));
         }
 
         return albums;
